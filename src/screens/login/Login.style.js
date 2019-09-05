@@ -3,24 +3,33 @@ import { StyleSheet } from 'react-native';
   export default StyleSheet.create({
     container:{
       flex: 1,
-      backgroundColor: '#c3edfa',
+      // backgroundColor: '#c3edfa',
+      backgroundColor: '#82b2df'
     },
     titleContainer:{
-      display:"flex",
-      alignItems: "center",
-      paddingTop:100,
-      borderWidth: 1,
-      borderColor: "#5995DA"
+      // textAlign:"center",
+      // alignSelf:"flex-start",
+      // alignItems: "flex-start",
+    //  paddingTop:100,
+      marginTop: '25%',
+      marginBottom: '25%',
+      // borderWidth: 3,
+      // borderColor: "#5995DA"
     },
     title:{
+      textAlign:"center",
       fontWeight:"bold",
       fontSize:32,
     },
     loginContainer: {
       flex: 1,
+      // marginTop: '10%',
       // display: "flex",
-      justifyContent: 'center',
+      // justifyContent: 'center',
       alignItems: 'center',
+      flexDirection: "column",
+      // borderWidth: 5,
+      // borderColor: "red"
     },
     logo: {
       display:"flex",
@@ -59,7 +68,8 @@ import { StyleSheet } from 'react-native';
       borderRadius: 30,
     },
     loginButton: {
-      backgroundColor: '#00b5ec',
+      // backgroundColor: '#00b5ec',
+      backgroundColor: '#272b29'
     },
     loginText: {
       color: 'white',
