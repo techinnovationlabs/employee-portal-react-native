@@ -1,4 +1,5 @@
 import React, {Component} from 'react';
+import globalStyles from '../global.style';
 import styles from './Login.style.js';
 import * as loginService from './Login.service';
 
@@ -11,7 +12,7 @@ import {
   TouchableHighlight,
   Image,
   Alert,
-  ActivityIndicator
+  ActivityIndicator,
 } from 'react-native';
 
 export default class Login extends Component {
@@ -20,7 +21,7 @@ export default class Login extends Component {
     this.state = {
       userName: '',
       password: '',
-      animating:false
+      animating: false,
     };
   }
 
@@ -35,35 +36,36 @@ export default class Login extends Component {
       password: this.state.password,
     };
     const {navigate} = this.props.navigation;
-    loginService
-      .authenticate(credentials)
-      .then(isAuthenticated => {
-         animating = true;
-         this.setState({animating});
-        if(isAuthenticated){
-            navigate('Profile');
-        }
-        else{
-            // Alert.alert('Wrong Username or Password');
-        }
-      });
-      animating=true;
+    loginService.authenticate(credentials).then(isAuthenticated => {
+      animating = false;
       this.setState({animating});
+      if (isAuthenticated) {
+        navigate('Profile');
+      } else {
+        Alert.alert('Wrong Username or Password');
+      }
+    });
+    animating = true;
+    this.setState({animating});
   }
 
   render() {
-      console.log(this.state);
+    console.log(this.state);
     return (
-      <View style={styles.container}>
+      <View style={globalStyles.container}>
         <View style={styles.logo}>
           <Image
             source={require('../../res/images/asahi-technologies-logo-sprite.png')}
           />
         </View>
-         <View style={styles.titleContainer}>
+        <View style={styles.titleContainer}>
           <Text style={styles.title}>Login</Text>
-    </View>
-        <ActivityIndicator animating={this.state.animating} size="large" color="#0000ff" />
+        </View>
+        {/* <ActivityIndicator
+          animating={this.state.animating}
+          size="large"
+          color="#0000ff"
+        /> */}
         <View style={styles.loginContainer}>
           {/* <View style={styles.titleContainer}>
             <Text style={styles.title}>ESSP - Login</Text>
@@ -91,8 +93,7 @@ export default class Login extends Component {
 
           <TouchableHighlight
             style={[styles.buttonContainer, styles.loginButton]}
-            onPress={() => this.authenticate()}
-          >
+            onPress={() => this.authenticate()}>
             <Text style={styles.loginText}>Login</Text>
           </TouchableHighlight>
 

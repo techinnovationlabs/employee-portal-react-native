@@ -1,4 +1,6 @@
 import APP_URL from '../../config/appconstant';
+import GLOBAL from '../../config/global';
+
 
 async function authenticate(credentials) {
     var data = {
@@ -16,13 +18,18 @@ async function authenticate(credentials) {
         body: JSON.stringify(data),
       });
       console.log(data);
-      console.log(response);
+      let responseJson = await response.json();
       if (response.status >= 200 && response.status < 300) {
+        console.log(responseJson);
+        GLOBAL.currentlogin = responseJson
         console.log("authenticated");
         return true;
       } else {
         console.log("not authenticated");
-        return false;
+        setTimeout(() => {
+          return false;
+        }, 5000);
+        // return false;
       }
     } catch (errors) {
     console.log(errors);

@@ -1,20 +1,16 @@
 import { StyleSheet } from 'react-native';
 
   export default StyleSheet.create({
-    container:{
-      flex: 1,
-      // backgroundColor: '#c3edfa',
-      backgroundColor: '#82b2df'
-    },
     titleContainer:{
       // textAlign:"center",
       // alignSelf:"flex-start",
-      // alignItems: "flex-start",
+      // alignItems: "center",
     //  paddingTop:100,
-      marginTop: '25%',
-      marginBottom: '25%',
-      // borderWidth: 3,
-      // borderColor: "#5995DA"
+      flex: 1,
+      // marginTop: '25%',
+      // marginBottom: '15%',
+      borderWidth: 3,
+      borderColor: "#5995DA"
     },
     title:{
       textAlign:"center",
@@ -22,18 +18,20 @@ import { StyleSheet } from 'react-native';
       fontSize:32,
     },
     loginContainer: {
-      flex: 1,
+      flex: 3,
       // marginTop: '10%',
       // display: "flex",
       // justifyContent: 'center',
       alignItems: 'center',
       flexDirection: "column",
-      // borderWidth: 5,
-      // borderColor: "red"
+      borderWidth: 5,
+      borderColor: "red"
     },
     logo: {
-      display:"flex",
-      alignItems: "center"
+      // display:"flex",
+      flex: 1,
+      alignItems: "center",
+      marginTop:'5%'
     },
     inputContainer: {
       borderBottomColor: '#F5FCFF',
