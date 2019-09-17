@@ -8,9 +8,7 @@ import { StyleSheet } from 'react-native';
     //  paddingTop:100,
       flex: 1,
       // marginTop: '25%',
-      // marginBottom: '15%',
-      borderWidth: 3,
-      borderColor: "#5995DA"
+      // marginBottom: '15%',"
     },
     title:{
       textAlign:"center",
@@ -24,8 +22,6 @@ import { StyleSheet } from 'react-native';
       // justifyContent: 'center',
       alignItems: 'center',
       flexDirection: "column",
-      borderWidth: 5,
-      borderColor: "red"
     },
     logo: {
       // display:"flex",
