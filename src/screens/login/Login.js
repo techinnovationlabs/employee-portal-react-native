@@ -40,7 +40,7 @@ export default class Login extends Component {
       animating = false;
       this.setState({animating});
       if (isAuthenticated) {
-        navigate('Profile');
+        navigate('Dashboard');
       } else {
         Alert.alert('Wrong Username or Password');
       }
